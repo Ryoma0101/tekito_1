@@ -7,7 +7,8 @@ const App: React.FC = () => {
   useEffect(() => {
     fetch('http://localhost:8080/api/message')
       .then(response => response.json())
-      .then(data => setMessage(data.message));
+      .then(data => setMessage(data.message))
+      .catch(error => console.error('Error fetching message:', error));
   }, []);
 
   return (
